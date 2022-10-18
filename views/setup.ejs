@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only Subarus - Setup</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      sizes="32x32"
+      href="/img/favicon.ico"
+    />
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<tr><h1><img class="logo" src="img/onlysubs.png" alt="onlysubs logo"></h1></tr> 
+<body>
+    <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
+    <h2 class="signup">Enter the search params below to find subarus near you!</h2>
+    <form class="signup setSearch" action="/getSearchInfo" method="POST">
+        <input type="text" name="year" placeholder="Year ex. 1995-1999, 77">
+        <input type="text" name="zip" placeholder="Zip Code">
+        <input type="text" name="miles" placeholder="Distance in Miles to Search">
+        <input type="submit">
+    </form>
+    <p class="signup">This search will show up at each login. You can change it later too!</p>
+</body>
+</html>
