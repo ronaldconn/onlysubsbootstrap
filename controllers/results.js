@@ -36,9 +36,9 @@ module.exports = {
     getApi: async (req,res)=>{
 
             try{
-                await scrapData
-                console.log("See API function?")
-                let results = await scrapData.scrape()
+                console.log(req.user.mainSearch)
+                let url = req.user.mainSearch
+                let results = await scrapData.scrape( url )
                 console.log(results)
                 res.json( results )
                 
