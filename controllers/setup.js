@@ -26,7 +26,7 @@ module.exports = {
                     const comment = await User.findById(req.user);
 
                     console.log(comment)
-                    let results = await scrapData.search( newSearchUrl )
+                    let results = await scrapData.scrape( newSearchUrl )
                     console.log(results)
                   
                     // res.render('results.ejs', {scraped: results})
